@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>
+            Registration form
+        </title>
+        </head>
+        <body style="background-color: rgb(66, 8, 8);color: white;font-size: 20px;">
+            <form th:action="@{/registersucc}" method="post" th:object="${frm}">
+                <i><center>Want to watch a movie,Let's get to know you</center></i>
+                Name:<input type="text" th:field="*{name}"/><br><br>
+                Email:<input type="text" th:field="*{mail}"/><br><br>
+                Password:<input type="password" th:field="*{pass}"/><br><br>
+                DOB:<input type="date" th:field="*{dob}"/><br><br>
+                Have You paid:<input type="radio" th:field="*{paid}" value="yes"/>yes
+                <input type="radio" th:field="*{paid}" value="NO"/>No<br>>
+                Select the movie name:<input list="artist" th:field="*{movie}">
+                <datalist id="artist">
+                    <option value="porthozhil"></option>
+                    <option value="Maamanan"></option>
+                </datalist><br><br>
+                Select the time:<input type="checkbox" th:field=*{time} value="7:00 p.m">7:00 p.m<br><br>
+                <input type="checkbox" th:field=*{time} value="10:00 p.m">10:00p.m<br><br>
+                Give your feedback here:<textarea rows="3" cols="20" th:field="*{fb}"></textarea>
+<br><br>
+ 
+                <button type="submit">Register</button>
+            </form>
+        </body>
+</html>
